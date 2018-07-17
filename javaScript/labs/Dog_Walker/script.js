@@ -17,17 +17,54 @@ let dogName1 = "Steve";
 let dogType1 = "beagle";
 
 // Complete Task 1 Below
-
+console.log("I will walk " + dogName1 + " at 12:00 PM");
 
 
 let dogName2 = "Joe";
 let dogType2 = "bulldog";
 
 // Complete Task 2 Below
-
+if(dogType2 === "corgi"){
+  console.log("I will walk " + dogName2 + " at 12:00 PM");
+}
+else{
+  console.log("I will walk " + dogName2 + " at 1:00 PM");
+}
 
 
 let dogName = "Lola";
 let dogType = "poodle";
+var favDogs = ["Spike", "Jeremy", "Lola", "Peaches", "Steve"];
+var thisDog;
 
 // Complete Task 3 Below
+if((dogType === "corgi")||(dogType === "beagle")){
+  for(i=0;i<favDogs.length; i++){
+    if(favDogs[i].toLowerCase() == dogName.toLowerCase()){
+      console.log("I will walk " + favDogs[i] + ", one of my favorite dogs, at 12:00 PM");
+    }
+    else{
+      console.log("I will walk " + dogName + " at 12:00 PM");
+    }
+  }
+}
+else if(dogType === "bulldog"){
+  for(i=0;i<favDogs.length; i++){
+    if(favDogs[i].toLowerCase() == dogName.toLowerCase()){
+      console.log("I will walk " + favDogs[i] + ", one of my favorite dogs, at 1:00 PM");
+    }
+    else{
+      console.log("I will walk " + dogName + " at 1:00 PM");
+    }
+  }
+}
+else{
+  for(i=0;i<favDogs.length; i++){
+    if(favDogs[i].toLowerCase() == dogName.toLowerCase()){
+      console.log("I will walk " + favDogs[i] + ", one of my favorite dogs, at 2:00 PM");
+    }
+    else{
+      console.log("I will walk " + dogName + " at 2:00 PM");
+    }
+  }
+}
