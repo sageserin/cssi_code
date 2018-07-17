@@ -28,7 +28,12 @@
 
     <br>
 
-    <button>press me</button>
+    <button onclick="goMove()">press me</button>
+
+    <div id ="container">
+      <div id ="animate">
+      </div>
+    </div>
 
     <br>
 
@@ -45,6 +50,23 @@
       <div>Picture</div>
       <div class="special">Picture</div>
     </div>
+
+    <script>
+      function goMove() {
+        var elem = document.getElementById("animate");
+        var pos = 0;
+        var id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+          }
+        }
+      }
+    </script>
 
   </body>
 </html>
