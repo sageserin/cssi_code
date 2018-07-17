@@ -4,6 +4,7 @@ body {
 
 h1 {
   color: #7cb27e;
+  font-family: monospace;
 }
 
 p {
@@ -21,4 +22,8 @@ ul {
 
 #yum {
   border: 1px solid black;
+}
+
+#check {
+  height: 25px;
 }
