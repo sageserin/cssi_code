@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>the return of loss</title>
+    <!-- <script type="text/javascript" src="project.js"></script> -->
+    <link rel="stylesheet" href="project.css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="content">
+
+      <div class="header" id="mainHeader">
+        <h1>Is This Loss?</h1>
+        <div id="subHeader">
+          <a class="link" href="#past">past</a>
+          <a class="link" href="#present">present</a>
+          <a class="link" href="#future">future</a>
+          <a class="link" href="https://knowyourmeme.com/news/heres-to-loss-the-internets-greatest-meme">source</a>
+        </div>
+      </div>
+
+      <div class="section" id="past">
+        <h2>past</h2>
+        <h4>the history behind the Loss meme</h4>
+        <p>Loss is a meme derived from the early-mid 2000s webcomic "Ctrl+Alt+Del," which was centered around main character and gamer Ethan. The character was portrayed as a hallmark nerd who followed expected stereotypes, with characteristics that would be considered misogynistic in today's times. The comic also involves Ethan's best friend, as well as his girlfriend, Lilah.</p>
+        <p>The author and artist of the comic released a 4-panel comic titled 'Loss,' during which Ethan hears news of his girlfriend's miscarriage. The first panel is of him bursting through the hospital doors. The second panel is of him speaking to the receptionist. The third panel is of him speaking to the doctor. The fourth panel is of him standing over his devastated girlfriend, who is laying in a hospital bed.</p>
+        <img id="loss" src="images/loss.jpg"/>
+        <p>Effectively, the figures portrayed in these four panels create these silhouttes: | || || |_ which became the ultimate format of the meme.</p>
+        <img id="template" src="images/template.png"/>
+      </div>
+
+      <div class="section" id="present">
+        <h2>present</h2>
+        <h4>Loss's revival today</h4>
+        <p>Today, Loss is experiencing a renaissance as it returns to pop culture. Many have posted their own modified versions of the meme, oftentimes hiding the aforementioned four figures in obscure images, which birthed the phrase, "Is this Loss?". Below is a gallery of examples of Loss.
+
+        <div class="gallery">
+          <img id="words" src="images/words.png"/>
+          <img id="graph" src="images/graph.png"/>
+          <img id="sleep" src="images/sleep.jpg"/>
+          <img id="frog" src="images/frog.jpg"/>
+          <img id="map" src="images/map.jpg"/>
+          <img id="inc" src="images/inc.jpg"/>
+        </div>
+      </div>
+
+      <div class="section" id="future">
+        <h2>future</h2>
+        <h4>a prediction of Loss's lifespan</h4>
+        <p>All great memes must die. Despite Loss's unexpectedly long lifespan, its popularity is already dwindling, thanks to the sharp rise in a new meme known as the Car Salesman. In the future, it can be expected that Loss will slowly disappear from the public eye once more, just as it did nearly a decade ago.</p>
+        <img id="car" src="images/car.png"/>
+      </div>
+
+      <script>
+        window.onscroll = function() {addStick()};
+        var header = document.getElementById("mainHeader");
+        var sticky = header.offsetTop;
+        function addStick() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+      </script>
+
+    </div>
+  </body>
+
+</html>
