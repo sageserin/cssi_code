@@ -54,3 +54,15 @@ body {
 #green {
   background-color: green;
 }
+
+#clear {
+  color: black;
+}
+
+#texty {
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  word-wrap: break-word;
+}

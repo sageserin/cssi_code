@@ -12,10 +12,59 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+let bigBox = document.querySelector('#responseBox');
+let textBox = document.getElementById('texty');
+
 // Use querySelector to store the div in a variable.
 let redButton = document.querySelector('#red');
 
 // Use addEventListener to respond to a click event.
 redButton.addEventListener('click', e => {
   console.log("You clicked the red button!");
+  responseBox.style.backgroundColor = 'red';
+  makeRed();
 })
+
+// Use querySelector to store the div in a variable.
+let greenButton = document.querySelector('#green');
+
+// Use addEventListener to respond to a click event.
+greenButton.addEventListener('click', e => {
+  console.log("You clicked the green button!");
+  responseBox.style.backgroundColor = 'green';
+  makeGreen();
+})
+
+// Use querySelector to store the div in a variable.
+let blueButton = document.querySelector('#blue');
+
+// Use addEventListener to respond to a click event.
+blueButton.addEventListener('click', e => {
+  console.log("You clicked the blue button!");
+  responseBox.style.backgroundColor = 'blue';
+  makeBlue();
+})
+
+let clearButton = document.querySelector('#clear');
+
+clearButton.addEventListener('click', e => {
+  console.log("You cleared everything!");
+  responseBox.style.backgroundColor = 'white';
+  clearText();
+})
+
+function makeRed() {
+  textBox.innerHTML +=  "RED ";
+}
+
+function makeGreen() {
+  textBox.innerHTML += "GREEN ";
+}
+
+function makeBlue() {
+  textBox.innerHTML += "BLUE ";
+}
+
+function clearText() {
+  textBox.innerHTML = "";
+}
