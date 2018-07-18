@@ -14,14 +14,27 @@
 
 let amusementParks = ["Disney World", "Hershey Park", "Six Flags", "Dorney Park", "Sea World"];
 //Complete task one below
-
+amusementParks.forEach((park, index) => {
+  park = park.toUpperCase();
+  console.log(park + ' is a great amusement park.');
+});
 
 
 
 let rollerCoasters = ["Big Thunder Mountain Railroad","Splash Mountain","Space Mountain", "Expedition Everest","The Twilight Zone Tower of Terror"];
 //Complete task two below
-
+for(i=0; i<rollerCoasters.length; i++){
+  console.log('I will ride ' + rollerCoasters[i]);
+  if (rollerCoasters[i] == 'Space Mountain'){
+    break;
+  }
+}
 
 
 let height = 6;
 //Complete task three below
+
+while(height > 4){
+  console.log('Your height is ' + height + '. Next customer');
+  height = Math.floor(Math.random() * 20) + 3;
+}
