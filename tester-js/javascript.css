@@ -1,0 +1,14 @@
+body{
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.button {
+  font-family: serif;
+  transition: 4000ms all;
+}

@@ -1,17 +1,29 @@
-console.log('Hello World!');
+let likeButton = document.querySelector('button');
 
-const name = 'Charlie';
-console.log('Hello '+ name);
+likeButton.style.fontSize = '250px';
 
-let age = 17;
-console.log('you are ' + age + ' years old');
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
-// while(age < 20){
-//   if(age < 20){
-//     console.log('yeah');
-//     age = age + 1;
-//   }
-//   else{
-//     console.log('na');
-//   }
+// function setRandomColor() {
+//   $("#colorpad").css("background-color", getRandomColor());
 // }
+
+likeButton.addEventListener('mouseover', e => {
+    likeButton.style.backgroundColor = getRandomColor();
+})
+
+likeButton.addEventListener('mouseout', e => {
+    likeButton.style.backgroundColor = getRandomColor();
+})
+
+const names = ['Alice', 'Bob', 'Charlie', 'Deborah'];
+for(i=0; i<names.length; i++){
+  console.log(names[i]);
+}
