@@ -81,6 +81,5 @@ check.addEventListener('click', e => {
 });
 
 publish.addEventListener('click', e => {
-  publishRecipe(recipe);
-  document.body.appendChild(t);
+  document.body.appendChild(publishRecipe(recipe));
 })
