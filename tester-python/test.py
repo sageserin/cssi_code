@@ -1,7 +1,7 @@
 """first testing python file"""
 
-def fizzbuzz():
-"""
+def fizzbuzz(x):
+    """
     Takes a user input value and spits out an answer depending on whether the value is divisible by 3, 5, or both.
 
     Args:
@@ -12,10 +12,9 @@ def fizzbuzz():
     'fizz' if divisible by 3 only
     'buzz' if divisible by 5 only
     'nah bro' if not in any of the above categories
+    """
 
-"""
-
-    x = input('enter a number: ')
+    #x = input('enter a number: ')
     if x%3 == 0 and x%5 == 0:
         print('fizzbuzz')
     elif (x%3 == 0):
@@ -25,7 +24,11 @@ def fizzbuzz():
     else:
         print('nah bro')
 
-fizzbuzz()
+fizzbuzz(5)
+
+if __name__ == '__main__':
+    print('lmaoo')
+    fizzbuzz(15)
 
 """exploring the world of python"""
 # print('Hello world')
