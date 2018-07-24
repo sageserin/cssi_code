@@ -33,35 +33,46 @@
 import webapp2
 import os
 import random
+import jinja2
 
+#remember, you can get this by searching for jinja2 google app engine
+jinja_current_directory = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
 
 def get_fortune():
     #add a list of fortunes to the empty fortune_list array
-    fortune_list=['fortune1', 'fortune2']
+    fortune_list=['you will die soon', 'you will die later']
     #use the random library to return a random element from the array
-    random_fortune =
+    random_fortune = random.choice(fortune_list)
     return(random_fortune)
-
-
-#remember, you can get this by searching for jinja2 google app engine
-jinja_current_directory = "insert jinja2 environment variable here"
 
 class FortuneHandler(webapp2.RequestHandler):
     def get(self):
-        # In part 2, instead of returning this string,
-        # make a function call that returns a random fortune.
-        self.response.write('a response from the FortuneHandler')
-    #add a post method
-    #def post(self):
+        start_template = jinja_current_directory.get_template('templates/fortune-start.html')
+        self.response.write(start_template.render())
+    def post(self):
+        results_template = jinja_current_directory.get_template('templates/fortune-results.html')
+        user_astro_sign = self.request.get(user_astrological_sign)
+        fortune_result = get_fortune()
+        fortune_dict = {'fortune': fortune_result,
+                        'sign': user_astro_sign}
+        self.response.write(results_template.render(fortune_dict))
 
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello World. Welcome to the root route of my app')
+
+class GoodbyeHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('my response is goodbye world')
 
 #the route mapping
 app = webapp2.WSGIApplication([
     #this line routes the main url ('/')  - also know as
     #the root route - to the Fortune Handler
     ('/', HelloHandler),
-    ('/predict', FortuneHandler) #maps '/predict' to the FortuneHandler
+    ('/predict', FortuneHandler), #maps '/predict' to the FortuneHandler
+    ('/farewell', GoodbyeHandler),
 ], debug=True)
