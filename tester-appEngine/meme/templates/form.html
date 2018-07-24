@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>form for meme</title>
+  </head>
+
+  <body>
+    <h1>make me a meme</h1>
+
+    <form method=POST action="/meme">
+      username:<br>
+      <input type='text' name='username'><br>
+      password:<br>
+      <input type='password' name='password'><br>
+      meme id:<br>
+      <select name="template_id"/>
+        {% for key, value in memes.iteritems() %}
+          <option value= {{ key }}>{{ value }}</option>
+        {% endfor %}
+      </select><br>
+      top text:<br>
+      <input type="text" name="text0"/><br>
+      bottom text:<br>
+      <input type="text" name="text1"/><br>
+      <br><input type="submit" value="make me a meme"/>
+    </form>
+  </body>
+</html>
