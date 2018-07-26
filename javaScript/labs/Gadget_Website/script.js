@@ -12,3 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+function title_change(){
+  if(document.getElementById('funny').innerHTML == 'THE MEGA-USEFUL ADDITION TO YOUR MEGA LIFE'){
+    document.getElementById('funny').innerHTML = 'WAHAHA YOU FOUND ME';
+  }
+  else{
+    document.getElementById('funny').innerHTML = 'THE MEGA-USEFUL ADDITION TO YOUR MEGA LIFE';
+  }
+}
+
+var image = document.getElementsByTagName('IMG');
+
+image.onmouseover = function(){
+  this.style.border = '5px';
+}
+
+for(i=0;i<image.length;i++){
+  image[i].onmouseover = function(){
+    this.style.border = '5px';
+  }
+}
+
+for(i=0;i<image.length;i++){
+  image[i].onmouseout = function(){
+    this.style.border = '0px';
+  }
+}

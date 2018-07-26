@@ -14,3 +14,81 @@
  * limitations under the License.
  */
 
+body{
+  font-family: 'Chelsea Market', cursive;
+}
+
+img{
+  width: 500px;
+  height: auto;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 0px solid black;
+}
+
+.header {
+  font-family: 'Bungee', cursive;
+  padding: 10px 16px;
+  background: #b2ccf7;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.subheader{
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+}
+
+.subheader a {
+  display: block;
+  padding: 15px;
+  color: black;
+}
+
+.subheader a:hover {
+  background: #93baf9;
+  color: white;
+}
+
+.title{
+  text-align: center;
+}
+
+.pl, .pr, .p{
+  padding: 50px;
+}
+
+.p img{
+  width: 400px;
+  height: auto;
+}
+
+.pl{
+  clear: right;
+  text-align: left;
+}
+
+.pr{
+  clear: left;
+  text-align: right;
+}
+
+.g{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+
+#divorce, #discipline, #listen, #sailor, #amazon{
+  float: left;
+}
+
+#argument, #hairdryer{
+  float: right;
+}
