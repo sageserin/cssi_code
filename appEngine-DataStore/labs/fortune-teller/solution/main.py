@@ -34,7 +34,8 @@ import webapp2
 import os
 import jinja2
 import random
-
+from models import Movie, User
+from google.appengine.ext import ndb
 
 def get_fortune():
     fortune_list=['Tomorrow, you will meet a life-changing new friend.',
@@ -67,8 +68,41 @@ class FortuneHandler(webapp2.RequestHandler):
         #astro_sign = request.form.get('user_astrological_sign')
         self.response.write(end_template.render(my_dict))
 
+class MovieHandler(webapp2.RequestHandler):
+    def get(self):
+        test_movie = Movie(title='avengers', runtime=120, rating=10.0)
+        test_movie.put()
 
+class UserHandler(webapp2.RequestHandler):
+    def get(self):
+        user_template=jinja_current_directory.get_template("templates/user.html")
+        self.response.write(user_template.render())
+
+    def post(self):
+        username = self.request.get('username')
+        password = self.request.get('password')
+        email = self.request.get('email')
+        user = User(username=username, password=password, email=email)
+        user.put()
+
+class DeleteHandler(webapp2.RequestHandler):
+    def get(self):
+        users = User.query()
+        all_users = users.fetch()
+        self.response.write(all_users)
+        data_dict = {'users': all_users}
+        delete_template=jinja_current_directory.get_template("templates/delete.html")
+        self.response.write(delete_template.render(data_dict))
+
+    def post(self):
+        user_id = self.request.get('user_id')
+        delete_movie = User.get_by_id(int(user_id))
+        delete_movie.key.delete()
+        self.get()
 
 app = webapp2.WSGIApplication([
-    ('/', FortuneHandler)
+    ('/', FortuneHandler),
+    ('/movie', MovieHandler),
+    ('/user', UserHandler),
+    ('/delete', DeleteHandler),
 ], debug=True)

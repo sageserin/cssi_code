@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+  </head>
+  <body>
+    <h1>delete</h1><br>
+    
+    {% for user in users %}
+      {{ user.title }}</option>
+      <form method=POST>
+        {{ user }}
+        <input type='submit' value='delete info'>
+        <input type='hidden' name='user_id' value='{{user.key.id()}}'>
+      </form>
+    {% endfor %}
+
+  </body>
+</html>
