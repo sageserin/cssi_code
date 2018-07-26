@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>form for meme</title>
+    <title>lean mean meme machine</title>
+    <link rel="stylesheet" href="stylesheets/main.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
   </head>
 
   <body>
-    <h1>make me a meme</h1>
+    <div id='form'>
+      <h1>ima make you a meme</h1>
+      <h2>not like... make you *into* a meme</h2>
+      <h3>just enter the info in the form</h3>
+      <h4>PROPERLY or else</h4>
+      <h5>you gonn get an error</h5>
+      <h6>boi i warned you</h6>
 
-    <form method=POST action="/meme">
-      username:<br>
-      <input type='text' name='username'><br>
-      password:<br>
-      <input type='password' name='password'><br>
-      meme id:<br>
-      <select name="template_id"/>
-        {% for key, value in memes.iteritems() %}
-          <option value= {{ key }}>{{ value }}</option>
-        {% endfor %}
-      </select><br>
-      top text:<br>
-      <input type="text" name="text0"/><br>
-      bottom text:<br>
-      <input type="text" name="text1"/><br>
-      <br><input type="submit" value="make me a meme"/>
-    </form>
+      <form method=POST action="/meme">
+        username:<br>
+        <input type='text' name='username'><br>
+        password:<br>
+        <input type='password' name='password'><br>
+        meme id:<br>
+        <select name="template_id"/>
+          {% for key, value in memes.iteritems() %}
+            <option value= {{ key }}>{{ value }}</option>
+          {% endfor %}
+        </select><br>
+        top text:<br>
+        <input type="text" name="text0"/><br>
+        bottom text:<br>
+        <input type="text" name="text1"/><br>
+        <br><input type="submit" value="make me a meme"/><br>
+      </form>
+    </div>
   </body>
 </html>

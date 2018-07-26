@@ -48,11 +48,21 @@ class MemePage(webapp2.RequestHandler):
             payload=urllib.urlencode(template),
             method=urlfetch.POST)
 
-        memedict = json.loads(going.content)
-        picture_url = memedict['data']['url']
-        self.response.write('<img src={url}>'.format(url=picture_url))
+        try:
+            memedict = json.loads(going.content)
+            picture_url = memedict['data']['url']
+            meme_template = template_env.get_template('templates/meme.html')
+            self.response.write(meme_template.render({'url':picture_url}))
+        except:
+            self.redirect('/error')
+
+class ErrorPage(webapp2.RequestHandler):
+    def get(self):
+        error_template = template_env.get_template('templates/error.html')
+        self.response.write(error_template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/meme', MemePage),
+    ('/error', ErrorPage),
 ], debug=True)
